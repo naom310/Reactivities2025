@@ -1,0 +1,14 @@
+// .vscode/launch.json
+{
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch API",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder}/API/bin/Debug/net9.0/API.dll",
+                "cwd": "${workspaceFolder}/API"
+            }
+        ]
+}
