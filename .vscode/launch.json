@@ -8,12 +8,10 @@
                 "request": "attach"
             },
             {
-                "name": "Launch API",
-                "type": "coreclr",
+                "name": "C#: API Debug",
+                "type": "dotnet",
                 "request": "launch",
-                "preLaunchTask": "build",
-                "program": "${workspaceFolder}/API/bin/Debug/net9.0/API.dll",
-                "cwd": "${workspaceFolder}/API"
+                "projectPath": "${workspaceFolder}/API/API.csproj"
             }
         ]
 }
