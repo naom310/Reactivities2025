@@ -10,14 +10,14 @@ type Props = {
 export default function ActivityCard({activity}: Props) {
     const isHost = false; // Placeholder for host logic, if needed
     const isGoing = false;  // Placeholder for going logic, if needed
-    const label = isHost ? 'You are hosting' : 'You are going'; 
+    const label = isHost ? 'You are hosting' : 'You are going';
     const isCancelled = false; // Placeholder for cancelled logic, if needed
     const color = isHost ? 'secondary' : isGoing ? 'warning' : 'default';
 
     return (
         <Card elevation={3} sx={{borderRadius: 3}}>
             <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
-                <CardHeader avatar={<Avatar sx={{height: 80, width: 80}} />} 
+                <CardHeader avatar={<Avatar sx={{height: 80, width: 80}} />}
                     title={activity.title}
                     titleTypographyProps={{fontWeight: 'bold', fontSize: 20}}
                     subheader={
@@ -26,7 +26,7 @@ export default function ActivityCard({activity}: Props) {
                             </>
                         }
                 />
-                <Box display='flex' flexDirection='column' gap={2} mr={2}>
+                <Box display='flex' flexDirection='column' gap={2} mr={2} >
                     {(isHost || isGoing) && <Chip label={label} color={color} sx={{borderRadius:2}} />}
                     {isCancelled && <Chip label='Cancelled' color='error' sx={{borderRadius:2}} />}
                 </Box>
@@ -40,14 +40,14 @@ export default function ActivityCard({activity}: Props) {
                     </Box>
                     <Place sx={{ml:3, mr: 1}} />
                     <Typography variant="body2">{activity.venue}</Typography>
-                </Box> 
-                <Divider />
+                </Box>
+                <Divider/>
                 <Box display='flex' gap={2} sx={{ backgroundColor: 'grey.200', py: 3, pl: 3 }}>
                     Attendees go here
                 </Box>
             </CardContent>
-            <CardContent sx={{ pb: 2 }}>
-                <Typography variant="body2">
+            <CardContent sx={{ pb: 2, display: 'flex' }}>
+                <Typography variant="body2" sx={{ flex: 1 }}>
                     {activity.description}
                 </Typography>
                 <Button 
@@ -55,7 +55,7 @@ export default function ActivityCard({activity}: Props) {
                     to={`/activities/${activity.id}`} 
                     size="medium" 
                     variant="contained"
-                    sx={{ display: 'flex', justifySelf: 'self-end', borderRadius: 3 }}
+                    sx={{ justifySelf: 'self-end', borderRadius: 3 }}
                 >
                     View
                 </Button>
