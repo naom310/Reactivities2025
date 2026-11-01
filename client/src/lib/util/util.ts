@@ -5,4 +5,4 @@ export function formatDate(date: DateArg<Date>) {
     return format(date, 'dd MMM yyyy h:mm a');
 }
 
-export const requiredString = (fieldName: string) => z.string({required_error: `${fieldName} is requied...`}).min(1, {message: `${fieldName} is requied...`})
+export const requiredString = (fieldName: string) => z.string({error: `${fieldName} is requied...`}).min(1, {error: `${fieldName} is requied...`})

@@ -44,11 +44,13 @@ export default function RegisterForm() {
                 borderRadius: 3
             }}
         >
-            <Box display = 'flex'
-                alignItems = 'center'
-                justifyContent = 'center'
-                gap={3} 
-                color = 'secondary.main'
+            <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 3 ,
+                        color: 'secondary.main'
+                    }}
             >
                 <LockOpen fontSize = "large" />
                 <Typography variant="h4">Register</Typography>

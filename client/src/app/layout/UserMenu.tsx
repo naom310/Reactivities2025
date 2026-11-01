@@ -27,7 +27,7 @@ export default function UserMenu() {
                 size = 'large'
                 sx = {{fontSize: '1.1rem'}}
             >
-                <Box display = 'flex' alignItems = 'center' gap = {2}>
+                <Box sx={{display: 'flex', alignItems: 'center', gap: 2}}>
                     <Avatar />
                     {currentUser?.displayName}
                 </Box>

@@ -1,5 +1,5 @@
 import { Group} from "@mui/icons-material";
-import { Box, AppBar, Toolbar, Typography, Container, MenuItem, LinearProgress } from "@mui/material";
+import { Box, AppBar, Toolbar, Typography, Container, MenuItem, LinearProgress, MenuList } from "@mui/material";
 import { NavLink } from "react-router";
 import MenuItemLink from "../shared/components/MenuItemLink";
 import { Observer } from "mobx-react-lite";
@@ -18,32 +18,50 @@ export default function NavBar() {
                     position: 'relative'
                 }}>
             <Container maxWidth="xl">
-                <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
+                <Toolbar sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                     <Box>
-                        <MenuItem component={NavLink} to='/' sx={{ display: 'flex', gap: 2 }}>
-                            <Group fontSize="large" />
-                            <Typography variant="h4" fontWeight='bold'>Reactivities</Typography>
-                        </MenuItem>
+                        <MenuList id="basic-menu-activities-home">
+                            <MenuItem component={NavLink} to='/' sx={{ display: 'flex', gap: 2 }}>
+                                <Group fontSize="large" />
+                                <Typography sx={{variant: 'h4', fontWeight: 'bold', fontSize: 'large'}}>Reactivities</Typography>
+                            </MenuItem>
+                        </MenuList>
                     </Box>
-                    <Box sx={{ display: 'flex' }}>
-                        <MenuItemLink to='/activities' >
-                            Activities
-                        </MenuItemLink>
-                        <MenuItemLink to='/counter'>
-                            Counter
-                        </MenuItemLink>
-                        <MenuItemLink to='/errors'>
-                            Errors
-                        </MenuItemLink>
+                    <Box sx={{ display: 'flex' }}> 
+                        <MenuList id="basic-menu-activities"  
+                                        sx = {{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                                p: 3,
+                                                gap: 3,
+                                                maxWidth: 'md',
+                                                mx: 'auto',
+                                                borderRadius: 3
+                                            }}>
+                            <MenuItemLink to='/activities' >
+                                Activities
+                            </MenuItemLink>
+                            <MenuItemLink to='/counter'>
+                                Counter
+                            </MenuItemLink>
+                            <MenuItemLink to='/errors'>
+                                Errors
+                            </MenuItemLink>
+                        </MenuList>
                     </Box>
-                    <Box display='flex' alignItems='center'>
+                    <Box sx={{display: 'flex', alignItems: 'center'}}>
                         {    
                             currentUser ? (<UserMenu />) 
                                         : (
-                                            <>
+                                            <MenuList id="basic-menu-activities-login"  
+                                                    sx={{ 
+                                                        display: 'flex', 
+                                                        flexDirection: 'row', 
+                                                        padding: 0 
+                                                    }}>
                                                 <MenuItemLink to = '/login'>Login</MenuItemLink>
                                                 <MenuItemLink to = '/register'>Register</MenuItemLink>
-                                            </>
+                                            </MenuList>
                                         )
                         }
                     </Box>

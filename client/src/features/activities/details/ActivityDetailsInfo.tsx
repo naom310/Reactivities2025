@@ -1,5 +1,5 @@
 import { CalendarToday, Info, Place } from "@mui/icons-material";
-import { Box, Button, Divider, Grid2, Paper, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid , Paper, Typography } from "@mui/material";
 import { formatDate } from "../../../lib/util/util";
 import { Activity } from "../../../lib/types";
 import { useState } from "react";
@@ -14,38 +14,38 @@ export default function ActivityDetailsInfo({ activity }: Props) {
     
     return (
         <Paper sx={{ mb: 2 }}>
-            <Grid2 container alignItems="center" pl={2} py={1}>
-                <Grid2 size={1}>
+            <Grid container sx={{alignItems: 'center', pl: 2, py: 1}}>
+                <Grid size={1}>
                     <Info color="info" fontSize="large" />
-                </Grid2>
-                <Grid2 size={11}>
+                </Grid>
+                <Grid size={11}>
                     <Typography>{activity.description}</Typography>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
             <Divider />
-            <Grid2 container alignItems="center" pl={2} py={1}>
-                <Grid2 size={1}>
+            <Grid container sx={{alignItems: 'center', pl: 2, py: 1}}>
+                <Grid size={1}>
                     <CalendarToday color="info" fontSize="large" />
-                </Grid2>
-                <Grid2 size={11}>
+                </Grid>
+                <Grid size={11}>
                     <Typography>{formatDate(activity.date)}</Typography>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
             <Divider />
 
-            <Grid2 container alignItems="center" pl={2} py={1}>
-                <Grid2 size={1}>
+            <Grid container sx={{alignItems: 'center', pl: 2, py: 1}}>
+                <Grid size={1}>
                     <Place color="info" fontSize="large" />
-                </Grid2>
-                <Grid2 size={11} display='flex' justifyContent='space-between' alignItems='center'>
+                </Grid>
+                <Grid size={11} sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <Typography>
                         {activity.venue}, {activity.city}
                     </Typography>
                     <Button onClick = {() => setMapOpen(!mapOpen)} >
                         {mapOpen ? 'Hide Map' : 'Show Map'}
                     </Button>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
                 {mapOpen && (
                         <Box sx={{height: 400, zIndex: 1000, display: 'block'}} > 
                                 <MapComponent 

@@ -12,6 +12,14 @@
                 "type": "dotnet",
                 "request": "launch",
                 "projectPath": "${workspaceFolder}/API/API.csproj"
+            },
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Depurar React en Chrome",
+                "url": "https://localhost:3000",
+                "webRoot": "${workspaceFolder}/src",
+                "sourceMaps": true
             }
         ]
 }

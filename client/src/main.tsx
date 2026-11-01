@@ -13,7 +13,7 @@ import { router } from './app/router/Routes';
 import { store, StoreContext } from './lib/stores/store';
 import {ToastContainer} from 'react-toastify';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 const queryClient = new QueryClient();
 

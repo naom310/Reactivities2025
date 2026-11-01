@@ -7,7 +7,7 @@ const Counter = observer (
         const {counterStore} = useStore();
 
         return (
-            <Box display= 'flex' justifyContent='spece-between'>
+            <Box sx={{display: 'flex', justifyContent: 'spece-between'}}>
                 <Box  sx={{width: '60%'}}>
                     <Typography variant="h4" gutterBottom>{counterStore.title}</Typography>
                     <Typography variant="h6" gutterBottom>The count is: {counterStore.count}</Typography>
